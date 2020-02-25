@@ -1,0 +1,17 @@
+height1 = []
+
+total = 10
+
+
+
+for number in range(total):
+
+    number = float(input('Enter any student's height: '))
+
+    height1.append(number)
+
+average = sum(height1)/total
+
+print("The average height of the 10 students is ", round(average,2))
+
+input("\n\nPress the enter key to exit.")
