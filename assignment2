@@ -1,95 +1,52 @@
-def digitSum(myString):   
-
+def digitSum(myString): 
     #initialisation
-
     length = len(myString)
-
     oddSum = 0
-
     evenSum = 0
-
-    
-
     #base case
-
     if (length == 0):
-
         return 0
-
-    
-
     #length > 0
-
     else:
-
        #if even
-
        if (length % 2 == 0):
-
            last = int(myString[-1])
-
            evenSum += last
-
-           
-
            return evenSum + digitSum(myString[:-1])
 
-       
-
        else:
-
             last = int(myString[-1])
-
             last = 2 * last
-
             part_sum = last // 10 + last % 10
-
             oddSum += part_sum
 
-            
-
             return oddSum + digitSum(myString[:-1])                    #return oddSum and call the function 
-
-
-
 def luhns():
-
-        
-
     myString = input('Please Enter the Credit card number: ')        #prompt the user to enter the credit card number 
 
-    
-
     total = digitSum(myString)                                         #pass the argument into the digitSum() function             
-
-    
 
     #validity test
 
     if (total % 10 == 0):                                              #if evenly divisible by 10. valid card                 
-
         print('This credit card is valid')
 
-    
-
     else:
-
         print('This credit card is invalid')                                          #not evenly divisible by 10. invalid card                 
-
  
-
 #main function call stack       
-
 def main():
 
-    
-
     #test number
-
     luhns()
 
-    
-
 #python call to main    
-
 main()
+
+# 4137 8947 1175 5904 = valid
+
+# 6499 8024 5027 3568 = invalid
+
+# 8504 1721 9127 3888 = valid
+
+# 0043 6687 8348 5480 = invalid
